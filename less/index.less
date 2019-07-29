@@ -57,3 +57,219 @@ html, body {
     height: 100%;
 }
 
+/*
+	variables 
+	nesting
+	mixins flexbox, need 2 of them
+	mobile at 500
+	all nested in main container
+	font-family: sans-serif;
+	font-weight: bold
+	color: grey
+*/
+
+@none-title-text: sans-serif;
+@none-title-color: #464646;
+@title-text: Helvetica;
+@title-color: #1d1d1d;
+@regular-size: 1.2rem;
+
+.flex {
+	display: flex;
+}
+
+.none-title {
+	font-family: @none-title-text;
+	color: @none-title-color;
+}
+
+.title {
+	font-family: @title-text;
+	color: @title-color;
+}
+
+.container {
+	max-width: 1000px;
+	width: 96%;
+	margin: 40px auto;
+
+	hr { 
+		display: block; height: px;
+    border: 0; 
+    border-top: 2px solid #ccc;
+    margin: 1em 0; 
+    padding: 0; 
+  }
+
+	header {
+		.flex();
+		flex-direction: row-reverse;
+		margin: 30px 0;
+		nav {
+			max-width: 400px;
+	    width: 100%;
+	    display: flex;
+	    justify-content: space-between;
+
+	    @media (max-width: 500px) { 
+	    	flex-direction:column;
+	    	max-width: none;
+	    	width: 100%;
+	    	text-align: center;
+	    }
+
+	    a {
+	    	.none-title();
+	    	font-size: @regular-size;
+	    	text-decoration: none;
+	    	@media (max-width: 500px) { 
+	    		font-size: 2rem;
+	    		border: solid #c5c5c5 2px;
+				  padding: 2%;
+				  margin-top: -2px;
+	    	}
+	    }
+		}
+	} //end of header
+
+	.call-container {
+		background-color: #e4e4e4;
+		border-radius: 10px;
+
+		.call-content {
+			padding: 30px 4%;
+		}
+
+		.personal-pic {
+			width: 40%;
+		}
+
+		h1 {
+			.title();
+			font-size: 3rem;
+			margin: 15px 0;
+		}
+
+		q {
+			.title();
+			font-size: @regular-size;
+		}
+
+		hr {
+			margin: 20px 0;
+		}
+
+		p {
+			.none-title();
+			font-size: @regular-size;
+		}
+
+		button {
+			.none-title();
+			font-size: @regular-size;
+			width: 180px;
+	    color: white;
+	    background-color: grey;
+	    border-radius: 10px;
+	    padding: 1%;
+	    margin-top: 15px;
+		}
+
+	} //end of call-container
+
+	.skills-container {
+		.flex();
+		justify-content: space-between;
+		margin: 30px 0;
+		@media (max-width: 500px) { 
+			flex-direction: column;
+		}
+
+		div {
+			width: 47%;
+
+			@media (max-width: 500px) { 
+				flex-direction: column;
+				width: 96%;
+			}
+
+			h2 {
+				.title();
+				font-size: 2rem;
+				margin-bottom: 10px;
+			}
+			p {
+				.none-title();
+				font-size: @regular-size
+			}
+			ul {
+				.none-title();
+				font-size: @regular-size;
+				li {
+				  border: solid #c5c5c5 2px;
+				  padding: 2.5%;
+				  margin-top: -2px;
+				}
+			}
+		}//end of div
+
+		div:last-child {
+			@media (max-width: 500px) { 
+				margin-top: 15px;
+			}
+		}
+
+	} //end of skills-container
+
+	.work-section {
+
+		h2 {
+			.title();
+			font-size: 2rem;
+		}
+
+		table {
+			width: 100%;
+			.none-title();
+			font-size: @regular-size;
+			text-align: left;
+			tr {
+				.title();
+
+				th {
+					font-weight: bold;
+					padding: 1%;
+				}
+
+				td {
+					.none-title();
+					padding: 1%;
+				}
+			}
+			tr:nth-child(even){
+				background-color: #e4e4e4;
+			}
+		} // end of table
+	} // end of work-section
+
+	footer {
+		background-color: grey;
+		.title();
+		color: white;
+		text-align: center;
+		padding: 30px 0;
+		margin: 30px 0;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+

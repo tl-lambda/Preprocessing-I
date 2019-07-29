@@ -1,1 +1,325 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+/*
+	variables 
+	nesting
+	mixins flexbox, need 2 of them
+	mobile at 500
+	all nested in main container
+	font-family: sans-serif;
+	font-weight: bold
+	color: grey
+*/
+.flex {
+  display: flex;
+}
+.none-title {
+  font-family: sans-serif;
+  color: #464646;
+}
+.title {
+  font-family: Helvetica;
+  color: #1d1d1d;
+}
+.container {
+  max-width: 1000px;
+  width: 96%;
+  margin: 40px auto;
+}
+.container hr {
+  display: block;
+  height: px;
+  border: 0;
+  border-top: 2px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+.container header {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 30px 0;
+}
+.container header nav {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .container header nav {
+    flex-direction: column;
+    max-width: none;
+    width: 100%;
+    text-align: center;
+  }
+}
+.container header nav a {
+  font-family: sans-serif;
+  color: #464646;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+@media (max-width: 500px) {
+  .container header nav a {
+    font-size: 2rem;
+    border: solid #c5c5c5 2px;
+    padding: 2%;
+    margin-top: -2px;
+  }
+}
+.container .call-container {
+  background-color: #e4e4e4;
+  border-radius: 10px;
+}
+.container .call-container .call-content {
+  padding: 30px 4%;
+}
+.container .call-container .personal-pic {
+  width: 40%;
+}
+.container .call-container h1 {
+  font-family: Helvetica;
+  color: #1d1d1d;
+  font-size: 3rem;
+  margin: 15px 0;
+}
+.container .call-container q {
+  font-family: Helvetica;
+  color: #1d1d1d;
+  font-size: 1.2rem;
+}
+.container .call-container hr {
+  margin: 20px 0;
+}
+.container .call-container p {
+  font-family: sans-serif;
+  color: #464646;
+  font-size: 1.2rem;
+}
+.container .call-container button {
+  font-family: sans-serif;
+  color: #464646;
+  font-size: 1.2rem;
+  width: 180px;
+  color: white;
+  background-color: grey;
+  border-radius: 10px;
+  padding: 1%;
+  margin-top: 15px;
+}
+.container .skills-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+@media (max-width: 500px) {
+  .container .skills-container {
+    flex-direction: column;
+  }
+}
+.container .skills-container div {
+  width: 47%;
+}
+@media (max-width: 500px) {
+  .container .skills-container div {
+    flex-direction: column;
+    width: 96%;
+  }
+}
+.container .skills-container div h2 {
+  font-family: Helvetica;
+  color: #1d1d1d;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.container .skills-container div p {
+  font-family: sans-serif;
+  color: #464646;
+  font-size: 1.2rem;
+}
+.container .skills-container div ul {
+  font-family: sans-serif;
+  color: #464646;
+  font-size: 1.2rem;
+}
+.container .skills-container div ul li {
+  border: solid #c5c5c5 2px;
+  padding: 2.5%;
+  margin-top: -2px;
+}
+@media (max-width: 500px) {
+  .container .skills-container div:last-child {
+    margin-top: 15px;
+  }
+}
+.container .work-section h2 {
+  font-family: Helvetica;
+  color: #1d1d1d;
+  font-size: 2rem;
+}
+.container .work-section table {
+  width: 100%;
+  font-family: sans-serif;
+  color: #464646;
+  font-size: 1.2rem;
+  text-align: left;
+}
+.container .work-section table tr {
+  font-family: Helvetica;
+  color: #1d1d1d;
+}
+.container .work-section table tr th {
+  font-weight: bold;
+  padding: 1%;
+}
+.container .work-section table tr td {
+  font-family: sans-serif;
+  color: #464646;
+  padding: 1%;
+}
+.container .work-section table tr:nth-child(even) {
+  background-color: #e4e4e4;
+}
+.container footer {
+  background-color: grey;
+  font-family: Helvetica;
+  color: #1d1d1d;
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+  margin: 30px 0;
+}
